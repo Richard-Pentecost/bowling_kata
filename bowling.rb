@@ -1,8 +1,12 @@
 class BowlingScorer
   def self.score(score)
     total = 0
-    score.each do |turn|
-      turn.split('').each { |bowl| total += bowl.to_i }
+    score.each_with_index do |turn, index|
+      if turn.include? '/'
+        total = 10 + score[index + 1][0].to_i
+      else
+        turn.split('').each { |bowl| total += bowl.to_i }
+      end
     end
     total
   end

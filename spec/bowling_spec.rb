@@ -31,5 +31,11 @@ describe BowlingScorer do
         expect(BowlingScorer.score(%w[00 00 30 00 00 00 00 00 01 02])).to eq(6)
       end
     end
+
+    context 'given ["7/", "80", "00", "00", "00", "00", "00", "00", "00", "00"] as input' do
+      it 'returns 26' do
+        expect(BowlingScorer.score(['7/', '80', '00', '00', '00', '00', '00', '00', '00', '00'])).to eq(26)
+      end
+    end
   end
 end
