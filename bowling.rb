@@ -1,9 +1,12 @@
 class BowlingScorer
   def self.score(score)
     total = 0
-    score.map do |turn|
-      total += turn[1].to_i if turn != '00'
+    score.each do |turn|
+      turn.split('').each { |bowl| total += bowl.to_i }
     end
     total
   end
 end
+
+# Possible refactor: magic number referring to bowl in turn by string index
+# Possible refactor: .each -> .reduce
