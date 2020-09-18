@@ -19,5 +19,11 @@ describe BowlingScorer do
         expect(BowlingScorer.score(%w[00 00 00 00 00 00 00 00 01 01])).to eq(2)
       end
     end
+
+    context 'given ["00", "00", "00", "00", "00", "00", "00", "00", "01", "02"] as input' do
+      it 'returns 3' do
+        expect(BowlingScorer.score(%w[00 00 00 00 00 00 00 00 01 02])).to eq(3)
+      end
+    end
   end
 end
