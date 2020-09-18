@@ -1,10 +1,9 @@
 class BowlingScorer
   def self.score(score)
-    # ["00", "00", "00", "00", "00", "00", "00", "00", "00", "00"]
-    if score.all? { |turn| turn == '00' }
-      0
-    else
-      1
+    total = 0
+    score.map do |turn|
+      total += 1 if turn != '00'
     end
+    total
   end
 end
